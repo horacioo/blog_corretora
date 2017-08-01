@@ -12,6 +12,9 @@ class carro {
     public $paginasInformacao;
     public $id_paginas_adm;
 
+    
+    
+    
     public function __construct() {
         
         //echo $_SERVER['HTTP_REFERER'];

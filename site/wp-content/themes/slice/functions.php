@@ -88,3 +88,6 @@ function chr_hide_pages( $query ) {
       return $query;
    }
  
+   
+   
+  $variaveis = array("ano","modelo","marca","descrição");

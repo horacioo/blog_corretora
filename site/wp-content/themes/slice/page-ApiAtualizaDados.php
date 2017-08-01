@@ -9,11 +9,15 @@
 
 
    $x= file_get_contents('php://input');
-   $info = explode("--------------------------",$x);
-   foreach ($info as $i):
+   $infox = explode("--------------------------",$x);
+   foreach ($variaveis as $v):
+       echo"<br>";print_r($v);
+   endforeach;
+   /*
+   foreach ($infox as $i):
        echo"<br>";
        print_r($i);
-   endforeach;
+   endforeach;*/
 
 /*
 $putdata = fopen("php://input", "r");
