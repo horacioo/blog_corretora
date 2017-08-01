@@ -28,7 +28,7 @@ function Atualiza() {
     $channel = curl_init($uri);
     curl_setopt($channel, CURLOPT_RETURNTRANSFER, true);
     curl_setopt($channel, CURLOPT_CUSTOMREQUEST, "PUT");
-    curl_setopt($channel, CURLOPT_POSTFIELDS, array("informacao"=>"testexxx","teste"=>"deu certo","sobrenome"=>"info"));
+    curl_setopt($channel, CURLOPT_POSTFIELDS, array("ano"=>"1986","marca"=>"gm","descricao"=>"info","modelo"=>"corsa"));
     curl_setopt($channel, CURLOPT_SSL_VERIFYPEER, false);
     curl_setopt($channel, CURLOPT_CONNECTTIMEOUT, 10);
      

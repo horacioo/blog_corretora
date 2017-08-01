@@ -1,19 +1,30 @@
-<?php #teste
+<?php
 
+#teste
 //$metodo = $_SERVER['REQUEST_METHOD'];
 //$recurso = explode("/", substr(@$_SERVER['PATH_INFO'], 1));
 //$conteudo = file_get_contents(php://input);
-
 //print_r(array("sucesso"=>1,"marca"=>$_SERVER['REQUEST_METHOD'],"dados"=>$_ENV ));
 
 
 
-   $x= file_get_contents('php://input');
-   $infox = explode("--------------------------",$x);
-   foreach ($variaveis as $v):
-       echo"<br>";print_r($v);
-   endforeach;
-   /*
+
+
+$dados = array();
+$x = file_get_contents('php://input');
+$infox = explode("--------------------------", $x);
+foreach ($variaveis as $v):
+    $d = explode($v.'"', $x);
+    $dx = explode("-",$d[1]);
+    $arr = trim($dx[0]);
+    $dados[$v]=$arr;
+endforeach;
+print_r($dados);
+
+
+
+
+/*
    foreach ($infox as $i):
        echo"<br>";
        print_r($i);
