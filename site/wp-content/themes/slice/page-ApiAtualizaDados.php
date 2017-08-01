@@ -1,7 +1,7 @@
 <?php 
 //$x= array("sucesso"=>1,"marca"=>$_REQUEST['marca']);
-var_dump($_REQUEST); 
-
+ 
+print_r(array("sucesso"=>1,"marca"=>$_REQUEST['marca']));
 //echo"<br>". json_encode($_REQUEST);
 /*
 require_once"class/carro.php";

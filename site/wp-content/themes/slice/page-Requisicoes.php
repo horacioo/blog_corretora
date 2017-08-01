@@ -12,27 +12,55 @@ switch ($_REQUEST['tipo']):
 endswitch;
 
 function Atualiza() {
-    
-    $x = 3;
-    $dados = $_REQUEST['dados'];
+
+    $url = Pagina("ApiAtualizaDados");
+    $curl = curl_init($url . "/Contacts/{$recordId}");
     $data = array(
         'first_name' => 'John',
-        'segundo_name' => 'John',
-        'terceiro_name' => 'John',
     );
-    $x = http_build_query($data);
-    $url = Pagina("ApiAtualizaDados");
-    $curl = curl_init($url);
     curl_setopt($curl, CURLOPT_CUSTOMREQUEST, "PUT");
+    curl_setopt($curl, CURLOPT_HEADER, false);
     curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
+    curl_setopt($curl, CURLOPT_HTTPHEADER, array('Content-Type: application/json', "OAuth-Token: $token"));
     curl_setopt($curl, CURLOPT_POSTFIELDS, http_build_query($data));
+
+// Make the REST call, returning the result
     $response = curl_exec($curl);
-    echo $response;
-    curl_close($ch);
+    var_dump($response);
+    curl_close($curl);
     
-    
-    
-    
+    /*
+     *   $x = 3;
+      $dados = $_REQUEST['dados'];
+      $data = array(
+      'first_name' => 'John',
+      'segundo_name' => 'John',
+      'terceiro_name' => 'John',
+      );
+      $x = http_build_query($data);
+      $url = Pagina("ApiAtualizaDados");
+      $curl = curl_init($url);
+      curl_setopt($curl, CURLOPT_CUSTOMREQUEST, "PUT");
+      curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
+      curl_setopt($curl, CURLOPT_POSTFIELDS, http_build_query($data));
+      $response = curl_exec($curl);
+      echo $response;
+      curl_close($ch);
+     */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     /*
       $ch = curl_init();
       curl_setopt($ch, CURLOPT_URL, $url);
