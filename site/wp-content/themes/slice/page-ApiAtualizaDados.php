@@ -20,9 +20,13 @@ print_r($dados);
 
 require_once"class/carro.php";
 $carro = new carro();
+//$dados = $_POST['dados'];
 
-$dados = $_POST['dados'];
-$dados= urldecode($dados);
+$carro->id_paginas_adm = $dados['id'];
+$carro->ano = $dados['ano'];
+$carro->marca = $dados['marca'];
+$carro->modelo = $dados['modelo'];
+$carro->descricao = $dados['descricao'];
 
 /*
 $carro->AtualizaDadosCarro($dados);

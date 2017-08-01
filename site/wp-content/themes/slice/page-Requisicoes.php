@@ -23,7 +23,6 @@ endswitch;
 
 function Atualiza() {
     $uri = Pagina("ApiAtualizaDados");
-    $uri=$uri."&ano=1976";     
         
     $channel = curl_init($uri);
     curl_setopt($channel, CURLOPT_RETURNTRANSFER, true);
@@ -32,10 +31,13 @@ function Atualiza() {
     curl_setopt($channel, CURLOPT_SSL_VERIFYPEER, false);
     curl_setopt($channel, CURLOPT_CONNECTTIMEOUT, 10);
      
-     $resultado = curl_exec($channel);
-     $statusCode = curl_getInfo($channel, CURLINFO_HTTP_CODE);
-     curl_close($channel);    
-    print_r($resultado);
+    $resultado = curl_exec($channel);
+    $statusCode = curl_getInfo($channel, CURLINFO_HTTP_CODE);
+    curl_close($channel);
+     
+     echo json_encode(array("sucesso"=>"1","outros"=>json_encode($_REQUEST)));
+     
+   // print_r($resultado);
     
     
     
