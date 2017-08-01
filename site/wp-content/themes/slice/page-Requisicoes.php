@@ -11,71 +11,44 @@ switch ($_REQUEST['tipo']):
         break;
 endswitch;
 
+
+
+
+
+
+
+
+
+
+
 function Atualiza() {
-
-    $url = Pagina("ApiAtualizaDados");
-    $curl = curl_init($url . "/Contacts/{$recordId}");
-    $data = array(
-        'first_name' => 'John',
-    );
-    curl_setopt($curl, CURLOPT_CUSTOMREQUEST, "PUT");
-    curl_setopt($curl, CURLOPT_HEADER, false);
-    curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
-    curl_setopt($curl, CURLOPT_HTTPHEADER, array('Content-Type: application/json', "OAuth-Token: $token"));
-    curl_setopt($curl, CURLOPT_POSTFIELDS, http_build_query($data));
-
-// Make the REST call, returning the result
-    $response = curl_exec($curl);
-    var_dump($response);
-    curl_close($curl);
+    $uri = Pagina("ApiAtualizaDados");
+    $uri=$uri."&ano=1976";     
+        
+    $channel = curl_init($uri);
+    curl_setopt($channel, CURLOPT_RETURNTRANSFER, true);
+    curl_setopt($channel, CURLOPT_CUSTOMREQUEST, "PUT");
+    curl_setopt($channel, CURLOPT_POSTFIELDS, array("informacao"=>"testexxx","teste"=>"deu certo","sobrenome"=>"info"));
+    curl_setopt($channel, CURLOPT_SSL_VERIFYPEER, false);
+    curl_setopt($channel, CURLOPT_CONNECTTIMEOUT, 10);
+     
+     $resultado = curl_exec($channel);
+     $statusCode = curl_getInfo($channel, CURLINFO_HTTP_CODE);
+     curl_close($channel);    
+    print_r($resultado);
     
-    /*
-     *   $x = 3;
-      $dados = $_REQUEST['dados'];
-      $data = array(
-      'first_name' => 'John',
-      'segundo_name' => 'John',
-      'terceiro_name' => 'John',
-      );
-      $x = http_build_query($data);
-      $url = Pagina("ApiAtualizaDados");
-      $curl = curl_init($url);
-      curl_setopt($curl, CURLOPT_CUSTOMREQUEST, "PUT");
-      curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
-      curl_setopt($curl, CURLOPT_POSTFIELDS, http_build_query($data));
-      $response = curl_exec($curl);
-      echo $response;
-      curl_close($ch);
-     */
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    /*
-      $ch = curl_init();
-      curl_setopt($ch, CURLOPT_URL, $url);
-      //curl_setopt($ch, CURLOPT_CUSTOMREQUEST,  'PUT');
-      curl_setopt($ch, CURLOPT_POST, 1);
-
-      $param=$dados;
-      curl_setopt($ch, CURLOPT_POSTFIELDS, $param);
-      curl_setopt($ch, CURLOPT_RETURNTRANSFER, TRUE);
-      $resultado = curl_exec($ch);
-      curl_close($ch);
-      echo $resultado;
-
-     */
+    
+    
+    
+    
 }
+
+
+
+
+
+
+
 
 function Modelo() {
     $url = Pagina("apiModeloCarro");
