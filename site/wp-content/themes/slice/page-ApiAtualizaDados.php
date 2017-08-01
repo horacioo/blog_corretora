@@ -1,4 +1,4 @@
-<?php 
+<?php #teste
 
 //$metodo = $_SERVER['REQUEST_METHOD'];
 //$recurso = explode("/", substr(@$_SERVER['PATH_INFO'], 1));
@@ -6,7 +6,8 @@
 
 //print_r(array("sucesso"=>1,"marca"=>$_SERVER['REQUEST_METHOD'],"dados"=>$_ENV ));
 
-require_once 'class/carro.php';
+
+
    $x= file_get_contents('php://input');
    $info = explode("--------------------------",$x);
    foreach ($info as $i):
