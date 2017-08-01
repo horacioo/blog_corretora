@@ -11,14 +11,16 @@ class carro {
     public $entrada;
     public $paginasInformacao;
     public $id_paginas_adm;
+    public $marca;
+    public $modelo;
+    public $ano;
+    public $descricao;
+    
 
-    
-    
-    
     public function __construct() {
-        
+
         //echo $_SERVER['HTTP_REFERER'];
-        
+
         $this->paginasInformacao = array(
             "ApiListaDeCarros",
             "Cadastradadoscarros",
@@ -123,17 +125,16 @@ class carro {
     public function AtualizaDadosCarro($dados) {
         $x = $this->RecriaArray($dados);
         $postarr = array(
-            "ID"=>$x['carro_escolhido'],
+            "ID" => $x['carro_escolhido'],
             "post_title" => $x['modelo'],
             'post_content' => $x['descricao']
         );
         $this->id = wp_update_post($postarr);
         update_post_meta($this->id, "ano", $x['ano']);
         update_post_meta($this->id, "marca", $x['marca']);
-        $this->sucesso=1;    
+        $this->sucesso = 1;
     }
 
-    
     private function RecriaArray($dados) {
         $dados = explode("&", $dados);
         $x = array();

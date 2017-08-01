@@ -90,4 +90,4 @@ function chr_hide_pages( $query ) {
  
    
    
-  $variaveis = array("descricao","ano","modelo","marca");
+  $variaveis = array("descricao","ano","modelo","marca","id");
