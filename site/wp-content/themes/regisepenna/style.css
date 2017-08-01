@@ -1,0 +1,301 @@
+/*
+Theme Name: Regis e penna corretora de seguros
+Theme URI: 
+Author: Horácio
+Author URI: http://www.planet1.com.br
+Description: layout do site da regisepenna corretora de seguros
+Version: 1
+
+
+This theme, like WordPress, is licensed under the GPL.
+Use it to make something cool, have fun, and share what you've learned with others.
+*/
+header .searchform{
+    border: 0px solid red;
+    margin-top: 20px;   
+}
+header .searchform #searchsubmit{display: none;}
+
+
+
+
+.conteudo_lateral_blog_home{
+    overflow: auto;
+}
+.conteudo_lateral_blog_home .categoria_noticias{
+    font-size: 12px;
+}
+
+.ShortCode_link a{
+    position: absolute;
+    bottom: 0;
+    background-color: rgba(255, 185, 0, 0.94);
+    width: 100%;
+    text-align: center;
+    text-transform: capitalize;
+    font-weight: bold;
+    text-decoration: none;
+    color: #364e5a;   
+}
+
+.ShortCode_link{
+    position: relative;
+    margin: 2px;
+    overflow: hidden;
+    height: 76px;
+    width: 23.5%;
+    float: left;
+    border-radius: 9px;
+}
+
+.ShortCode_link img{
+    position: asbolute;
+    width: 110%;
+    height: auto;
+}
+
+
+
+
+
+
+.lateral_blog_esquerda_widget{
+    border: 1px solid rgba(111, 111, 111, 0.14);
+    height: auto;
+    overflow: auto;
+    margin-top: 7px;
+    padding: 4px;
+    border-radius: 5px;
+}
+
+.lateral_blog_esquerda_widget .ShortCode_link{
+    height: 206px;
+    border-radius: 2px;
+}
+
+
+
+
+.LinkCategoria{
+    text-decoration: none;
+    font-weight: bolder;
+    text-transform: capitalize;
+    color: #364e5a;
+    /* border: 1px solid red; */
+    padding: 4px;
+    border-radius: 3px;
+    background-color: rgb(255, 185, 0);
+}
+
+
+
+
+
+
+.link_limpo{
+    text-decoration: none!important;
+}
+
+h1,h2,h3,h4,h5{
+    font-family: impact;
+    text-transform: capitalize;
+    color: #364e5a;
+}
+
+ul{
+    padding: 0;
+    margin: 0;
+}
+
+.fraseDeEfeito{
+    background-color: rgba(19, 60, 142, 0.79);
+    text-align: center;
+    color: #c0d3f7;
+    padding: 21px;
+    border-radius: 11px
+}
+
+#myCarousel{
+    border: 1px solid #505050;
+    height: 369px;
+    overflow: hidden;
+    border-radius: 0;
+}
+
+.imagem_caroussel{
+    height: 369px;
+
+}
+
+.carousel-caption{
+    position: absolute;
+    border: 0px solid red;
+    top: 190px;
+}
+
+
+.conteudo img{
+    -webkit-transition: all 1000ms ease;
+    -moz-transition: all 1000ms ease;
+    -ms-transition: all 1000ms ease;
+    -o-transition: all 1000ms ease;
+    transition: all 1000ms ease;
+}
+
+.conteudo img{
+    -webkit-filter: grayscale(99%); /* Safari 6.0 - 9.0 */
+    filter: grayscale(99%);
+}
+
+.conteudo img:hover{
+    -webkit-filter: grayscale(0%); /* Safari 6.0 - 9.0 */
+    filter: grayscale(0%);
+}
+
+.NoticiaHome{
+    border: 0px solid #ece7e7;
+    height: auto;
+    overflow: AUTO;
+    background: rgba(255, 255, 255, 0.61);
+    padding: 10px;
+    position: absolute;
+    bottom: 6px;
+    width: 96.4%;
+    left: 15px;
+}
+.NoticiaHome h3, .NoticiaHome .data_noticia{float: left; border: 0px solid red; margin: 2px;}
+.NoticiaHome small{clear: both; display: block; font-size: 10px;}
+
+
+
+
+
+
+/************************************************/
+.lista_noticias_lateral_ul li{
+    border: 0px solid red;
+    position: relative;
+    height: 123px;
+    overflow: hidden;
+    margin-bottom: 2px;
+}
+.lista_noticias_lateral_ul li img{
+    position: absolute;
+    width: 102%;
+    top: -89px;
+    left: 0px;
+}
+.lista_noticias_lateral_ul li .NoticiaHomeLateral{
+    position: absolute;
+    bottom: 0px;
+    background-color: rgba(255, 255, 255, 0.59);
+    width: 100%;
+    font-size: 13px;
+    text-align: center;
+}
+.lista_noticias_lateral_ul li .NoticiaHomeLateral h1,
+.lista_noticias_lateral_ul li .NoticiaHomeLateral h2,
+.lista_noticias_lateral_ul li .NoticiaHomeLateral h3
+{
+    margin: 0px;
+    font-weight: bolder;
+    text-transform: capitalize;
+    font-size: 16px;
+    clear: both;
+}
+
+footer{
+    min-height: 200px;
+    background-color: #364e5a;
+    padding: 12px;
+    color: white;
+    text-transform: capitalize;
+}
+footer a{color: white;}
+footer a:hover{color: white;}
+
+
+
+
+
+
+
+
+.conteudo_lateral_blog_home{
+    margin-top: 10px;
+    border: 0px solid #847b7b;
+    padding: 10px;
+    background-color: #eeeff1;
+    border-radius: 6px;
+}
+
+.conteudo_lateral_blog_home button,
+.conteudo_lateral_blog_home input
+{
+    background-color: #364e5a;
+    color: white;
+    border: none;
+}
+
+.conteudo_lateral_blog_home ul{margin: 0; padding: 0;}
+.conteudo_lateral_blog_home ul li{list-style: none;}
+
+.conteudo_lateral_blog_home h1,
+.conteudo_lateral_blog_home h2,
+.conteudo_lateral_blog_home h3
+{
+    font-weight: bolder;
+    margin: 2px;
+    text-transform: capitalize;
+}
+
+/***************************************/
+.listagem_noticias{
+    color: #374f5b;
+    border: 0px solid red;
+    position: relative;
+    height: auto;
+    overflow: auto;
+    margin-top: 2px;
+    padding: 5px;
+    background-color: #dee6e9;
+}
+
+.listagem_noticias .thumb_categoria{
+    position: relative;
+    border: 1px solid #9a9a9a;
+    width: 153px;
+    height: 148px;
+    overflow: hidden;
+    border-radius: 8px;
+    float: left;
+}
+.listagem_noticias .thumb_categoria img{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 110%;
+    height: auto; 
+}
+.listagem_noticias .thumb_categoria a{
+    position: absolute;
+    z-index: 5;
+    left: 0px;
+    background-color: rgba(255, 255, 255, 0.73);
+    padding: 4px;
+    width: 100%;
+    text-align: center;
+    bottom: 0px;
+    color: #737373;
+    font-weight: bolder;
+    text-transform: capitalize;
+}
+.listagem_noticias .texto_resumo_outras_noticias{
+    border: 0px solid red;
+    float: left;
+    text-align: center;
+}
+/***************************************/
+.lateral_esquerda{
+    border-right: 1px solid #dadada;
+}
