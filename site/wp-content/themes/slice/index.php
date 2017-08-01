@@ -7,7 +7,6 @@ To change this license header, choose License Headers in Project Properties.
 To change this template file, choose Tools | Templates
 and open the template in the editor.
 -->
-
 <html>
     <head>
         <meta charset="<?php bloginfo('charset'); ?>">
@@ -42,9 +41,6 @@ and open the template in the editor.
                             </div>
                         </div>
                 </section>
-
-
-
                 <div class="row">
                     <section class="col-md-12" id="cadastro"><?php get_template_part("includes/cadastra_carros") ?></section>
                     <section class="col-md-12" id="carros"><?php get_template_part("includes/lista_carros") ?></section>
@@ -56,14 +52,12 @@ and open the template in the editor.
             <footer>rodape</footer>
         </div>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-
         <script>
             var caminho = "<?php echo link_Pagina("Requisicoes"); ?>";
             var listaCarros = "<?php echo link_Pagina("Requisicoes"); ?>";
             var DetalheCarro = "<?php echo link_Pagina("Requisicoes"); ?>";
             var AtualizaDados = "<?php echo link_Pagina("Requisicoes"); ?>";
         </script>
-
         <script src="<?php echo get_template_directory_uri() . "/js/salvaCarros.js"; ?>"></script>
         <script src="<?php echo get_template_directory_uri() . "/js/listaCarros.js"; ?>"></script>
         <script src="<?php echo get_template_directory_uri() . "/js/ModeloCarro.js"; ?>"></script>
