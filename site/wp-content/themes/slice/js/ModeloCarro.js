@@ -5,7 +5,7 @@ function EntregaModelo() {
     jQuery("#sinal").html("aguarde, carregando");
 
     /*****************/
-    jQuery("#descricaoUp").html("");
+    jQuery("#descricaoUp").html("aguarde,carregando");
     /****************/
     $.ajax({
         type: "get",
