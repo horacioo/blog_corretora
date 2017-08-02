@@ -5,10 +5,7 @@ function EntregaModelo() {
     jQuery("#sinal").html("aguarde, carregando");
 
     /*****************/
-    jQuery("#modeloCarro").children("#ano").html("");
-    jQuery("#modeloCarro").children("#marca").html("");
-    jQuery("#modeloCarro").children("#descricao").html("");
-    jQuery("#modeloCarro").children("#modelo").html("");
+    jQuery("#descricaoUp").html("");
     /****************/
     $.ajax({
         type: "get",
@@ -23,22 +20,16 @@ function EntregaModelo() {
             var modelo = x.modelo;
             var descricao = x.descricao;
             var marcaInt = x.marcaInt;
-            /*
-             window.localStorage.setItem("ano",ano);
-             window.localStorage.setItem("marca",marca)
-             window.localStorage.setItem("descricao",descricao)
-             window.localStorage.setItem("modelo",modelo)
-             */
+            
             
             console.log("descricao "+descricao);
-            
             jQuery("#modeloCarro").children("#ano").html(ano);
             jQuery("#modeloCarro").children("#marca").html(marca);
-            jQuery("#modeloCarro").children("#descricao").html(descricao);
-            jQuery("#modeloCarro").children("#modelo").html(""+modelo+"");
+            jQuery("#modeloCarro").children("#descricao").html(""+descricao+"");
+            jQuery("#modeloCarro").children("#modelo").html(modelo);
             /*******************************************************/
             jQuery("#modeloUp").val(modelo);
-            jQuery("#marcaUp option[value=" + marcaInt + "]").prop("selected", "selected"); //$('.id_100 option[value=val2]').attr('selected','selected');
+            jQuery("#marcaUp option[value=" + marcaInt + "]").prop("selected", "selected");
             jQuery("#anoUp").val(ano);
             jQuery("#descricaoUp").html(descricao);
             jQuery("#hiddenUp").val(modelo_carro);
@@ -47,4 +38,5 @@ function EntregaModelo() {
 
     })
 }
+ 
 jQuery("#sinal").html("");
