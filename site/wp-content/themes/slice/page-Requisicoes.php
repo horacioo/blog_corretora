@@ -22,12 +22,22 @@ endswitch;
 
 
 function Atualiza() {
+    
+     $cc;
+    $x= explode("&",$_REQUEST['dados']);
+    foreach ($x as $c):
+        $i = explode("=",$c);
+        $cc[$i[0]]=$i[1];
+    endforeach;
+    
+    
+    
     $uri = Pagina("ApiAtualizaDados");
         
     $channel = curl_init($uri);
     curl_setopt($channel, CURLOPT_RETURNTRANSFER, true);
     curl_setopt($channel, CURLOPT_CUSTOMREQUEST, "PUT");
-    curl_setopt($channel, CURLOPT_POSTFIELDS,$_REQUEST);
+    curl_setopt($channel, CURLOPT_POSTFIELDS,$cc);
     curl_setopt($channel, CURLOPT_SSL_VERIFYPEER, false);
     curl_setopt($channel, CURLOPT_CONNECTTIMEOUT, 10);
      
@@ -35,17 +45,10 @@ function Atualiza() {
     $statusCode = curl_getInfo($channel, CURLINFO_HTTP_CODE);
     curl_close($channel);
      
-    $cc;
-    $x= explode("&",$_REQUEST['dados']);
-    
-    foreach ($x as $c):
-        //$c= str_replace("+", "", $cc);
-        $cc=$c;
-    endforeach;
-    
-    echo json_encode(array("sucesso"=>"1",json_encode($c)));
+       
+    ///echo json_encode(array("sucesso"=>"1",json_encode($cc)));
      
-   ///print_r($resultado);
+   print_r($resultado);
     
     
     

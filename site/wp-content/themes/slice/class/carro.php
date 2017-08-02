@@ -122,18 +122,40 @@ class carro {
         $y = update_post_meta($post_id, $meta_key, $x);
     }
 
-    public function AtualizaDadosCarro($dados) {
-        $x = $this->RecriaArray($dados);
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    public function AtualizaDadosCarro() {
+        ///$x = $this->RecriaArray($dados);
         $postarr = array(
-            "ID" => $x['carro_escolhido'],
-            "post_title" => $x['modelo'],
-            'post_content' => $x['descricao']
+            "ID" =>$this->id_paginas_adm ,//$x['carro_escolhido'],
+            "post_title" => $this->modelo,//$x['modelo'],
+            'post_content' =>$this->descricao //$x['descricao']
         );
         $this->id = wp_update_post($postarr);
-        update_post_meta($this->id, "ano", $x['ano']);
-        update_post_meta($this->id, "marca", $x['marca']);
+        update_post_meta($this->id_paginas_adm, "ano", $this->ano);//$x['ano']);
+        update_post_meta($this->id_paginas_adm, "marca", $this->marca);//$x['marca']);
         $this->sucesso = 1;
     }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
 
     private function RecriaArray($dados) {
         $dados = explode("&", $dados);
