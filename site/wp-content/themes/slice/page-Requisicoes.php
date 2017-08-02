@@ -27,8 +27,7 @@ function Atualiza() {
     $channel = curl_init($uri);
     curl_setopt($channel, CURLOPT_RETURNTRANSFER, true);
     curl_setopt($channel, CURLOPT_CUSTOMREQUEST, "PUT");
-    //curl_setopt($channel, CURLOPT_POSTFIELDS, array("id"=>"222","ano"=>"1986","marca"=>"gm","descricao"=>"info","modelo"=>"corsa"));
-    curl_setopt($channel, CURLOPT_POSTFIELDS, $_REQUEST);
+    curl_setopt($channel, CURLOPT_POSTFIELDS,$_REQUEST);
     curl_setopt($channel, CURLOPT_SSL_VERIFYPEER, false);
     curl_setopt($channel, CURLOPT_CONNECTTIMEOUT, 10);
      
@@ -36,9 +35,17 @@ function Atualiza() {
     $statusCode = curl_getInfo($channel, CURLINFO_HTTP_CODE);
     curl_close($channel);
      
-     //echo json_encode(array("sucesso"=>"1","outros"=>json_encode($_REQUEST)));
+    $cc;
+    $x= explode("&",$_REQUEST['dados']);
+    
+    foreach ($x as $c):
+        //$c= str_replace("+", "", $cc);
+        $cc=$c;
+    endforeach;
+    
+    echo json_encode(array("sucesso"=>"1",json_encode($c)));
      
-   print_r($resultado);
+   ///print_r($resultado);
     
     
     

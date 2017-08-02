@@ -1,17 +1,17 @@
 <?php
 
-$dados = array();
+$dadosx = array();
 $x = file_get_contents('php://input');
 $infox = explode("--------------------------", $x);
 foreach ($variaveis as $v):
     $d = explode($v.'"', $x);
     $dx = explode("-",$d[1]);
     $arr = trim($dx[0]);
-    $dados[$v]=$arr;
+    $dadosx[$v]=$arr;
 endforeach;
-print_r($dados);
 
-
+$dadosx['sucesso']=1;
+echo json_encode($dadosx);
 
 
 
@@ -27,6 +27,8 @@ $carro->ano = $dados['ano'];
 $carro->marca = $dados['marca'];
 $carro->modelo = $dados['modelo'];
 $carro->descricao = $dados['descricao'];
+
+
 
 /*
 $carro->AtualizaDadosCarro($dados);
