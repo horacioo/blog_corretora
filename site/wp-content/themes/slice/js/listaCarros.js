@@ -22,7 +22,6 @@ $("#lista").click(function () {
 });
 
 
-
 jQuery("#listaCarros").delegate(".carrosListados","click",function(){
     var codigo= jQuery(this).siblings('span').text();
     window.localStorage.setItem("carro_escolhido",codigo);

@@ -3,7 +3,6 @@ function EntregaModelo() {
     var modelo_carro = window.localStorage.getItem("carro_escolhido");
     var mensagem = "";
     jQuery("#sinal").html("aguarde, carregando");
-
     /*****************/
     jQuery("#descricaoUp").html("aguarde,carregando");
     /****************/
