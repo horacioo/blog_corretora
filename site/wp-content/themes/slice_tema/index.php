@@ -21,18 +21,15 @@
                         })
             });
         </script>
-        <script src="<?php echo $url_tema;?>/js/menu.js"></script>
-        
+        <script src="<?php echo $url_tema; ?>/js/menu.js"></script>
 
         <?php wp_head(); ?>
     </head>
     <body ng-app="App">
         <h1>home</h1>
-
         <a href="#/lista_de_carro">lista de carros</a>
         <a href="#/cadastro">cadastro</a>
 
-        
         <div ng-view></div>
         <?php wp_footer(); ?>
     </body>

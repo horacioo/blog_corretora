@@ -22,7 +22,7 @@ class carro {
         //echo $_SERVER['HTTP_REFERER'];
 
         $this->paginasInformacao = array(
-            "apilistaCarrosjson",
+            "api_lista",
             "apiCadastradadoscarrosjson",
             "apiAtualizaDados",
             "apideleta_dados",
