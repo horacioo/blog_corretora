@@ -11,53 +11,57 @@ switch ($_REQUEST['tipo']):
         break;
 endswitch;
 
+
+
+
+
+
+
+
+
+
+
 function Atualiza() {
-    $x = 3;
-    $dados = $_REQUEST['dados'];
-
-
-
-    $data = array(
-        'first_name' => 'John',
-        'segundo_name' => 'John',
-        'terceiro_name' => 'John',
-    );
-
-    $x = http_build_query($data);
-    $url = Pagina("ApiAtualizaDados");
-    ///$url = $url."&".$x;
-    ///print_r($url);
-
-    $curl = curl_init($url);
-
-
-    curl_setopt($curl, CURLOPT_CUSTOMREQUEST, "PUT");
-    //curl_setopt($curl, CURLOPT_HEADER, false);
-    curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
-    ///curl_setopt($curl, CURLOPT_HTTPHEADER, array('Content-Type: application/json', "OAuth-Token: $token"));
-    curl_setopt($curl, CURLOPT_POSTFIELDS, http_build_query($data));
-
-    //var_dump($x);
-// Make the REST call, returning the result
-    $response = curl_exec($curl);
-    echo $response;
-
-    curl_close($ch);
-    /*
-      $ch = curl_init();
-      curl_setopt($ch, CURLOPT_URL, $url);
-      //curl_setopt($ch, CURLOPT_CUSTOMREQUEST,  'PUT');
-      curl_setopt($ch, CURLOPT_POST, 1);
-
-      $param=$dados;
-      curl_setopt($ch, CURLOPT_POSTFIELDS, $param);
-      curl_setopt($ch, CURLOPT_RETURNTRANSFER, TRUE);
-      $resultado = curl_exec($ch);
-      curl_close($ch);
-      echo $resultado;
-
-     */
+    
+     $cc;
+    $x= explode("&",$_REQUEST['dados']);
+    foreach ($x as $c):
+        $i = explode("=",$c);
+        $cc[$i[0]]=$i[1];
+    endforeach;
+    
+    
+    
+    $uri = Pagina("ApiAtualizaDados");
+        
+    $channel = curl_init($uri);
+    curl_setopt($channel, CURLOPT_RETURNTRANSFER, true);
+    curl_setopt($channel, CURLOPT_CUSTOMREQUEST, "PUT");
+    curl_setopt($channel, CURLOPT_POSTFIELDS,$cc);
+    curl_setopt($channel, CURLOPT_SSL_VERIFYPEER, false);
+    curl_setopt($channel, CURLOPT_CONNECTTIMEOUT, 10);
+     
+    $resultado = curl_exec($channel);
+    $statusCode = curl_getInfo($channel, CURLINFO_HTTP_CODE);
+    curl_close($channel);
+     
+       
+    ///echo json_encode(array("sucesso"=>"1",json_encode($cc)));
+     
+   print_r($resultado);
+    
+    
+    
+    
+    
 }
+
+
+
+
+
+
+
 
 function Modelo() {
     $url = Pagina("apiModeloCarro");

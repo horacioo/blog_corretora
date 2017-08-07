@@ -22,12 +22,15 @@ class carro {
         //echo $_SERVER['HTTP_REFERER'];
 
         $this->paginasInformacao = array(
-            "ApiListaDeCarros",
-            "Cadastradadoscarros",
-            "apiModeloCarro",
-            "ApiDeletaCarro",
-            "ApiAtualizaDados",
-            "Requisicoes"
+            "api_lista",
+            "apiCadastradadoscarrosjson",
+            "apiAtualizaDados",
+            "apideleta_dados",
+            
+            "modelo_de_carro",
+            "cadastro-carros",
+            "lista_de_carros",
+            
         );
     }
 
