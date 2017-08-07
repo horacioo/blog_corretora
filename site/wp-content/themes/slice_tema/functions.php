@@ -1,7 +1,7 @@
 <?php
 
 global $wpdb;
-/*
+
 require_once 'class/carro.php';
 $carro = new carro();
 
@@ -91,5 +91,3 @@ function chr_hide_pages( $query ) {
    
    
   $variaveis = array("carro_escolhido","descricao","ano","modelo","marca","id");
- * 
- */

@@ -1,23 +1,9 @@
 <?php $url_tema = get_template_directory_uri(); ?>
-<!DOCTYPE html>
-<html>
-    <head>
-        <title>TODO supply a title</title>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <script src="<?php echo $url_tema; ?>/js/angular.min.js"></script>
-        <script>angular.module("MyApp", []);</script>
-        <script src="<?php echo $url_tema ?>/js/lista_carros.js"></script>
-    </head>
+<?php require_once 'class/carro.php';?>
+<ul>
+    <li><a href="#/lista_de_carro/carro1">carro 1</a></li>
+    <li><a href="#/lista_de_carro/carro2">carro 2</a></li>
+    <li><a href="#/lista_de_carro/carro3">carro 3</a></li>
+    <li><a href="#/lista_de_carro/carro4">carro 4</a></li>
     
-    <body ng-app="MyApp">
-        <h2>lista de carros</h2>
-        <div ng-controller="Lista_Carros">
-            {{teste}}
-            <ul ng-repeat="item in carros">
-                <li>{{item}}</li>
-            </ul>
-        </div>
-    </body>
-    
-</html>
+</ul>
