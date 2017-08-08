@@ -1,4 +1,9 @@
 <?php $url_tema = get_template_directory_uri(); ?>
+<?php
+require_once 'class/carro.php';
+$carro = new carro();
+$lista = $carro->ListaCarros();
+?>
 <!DOCTYPE html>
 <html>
     <head>
@@ -9,20 +14,35 @@
         <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-route.js"></script> 
         <script>
             var app = angular.module("App", ["ngRoute"]);
+        </script>    
+        <script src="<?php echo $url_tema; ?>/js/lista_carros.js"></script>
+        <script>
             app.config(function ($routeProvider) {
                 $routeProvider
-
                         .when("/lista_de_carro", {
-                            templateUrl: "http://localhost/blog_corretora/site/lista_de_carros"
+                            controller: "Lista_Carros",
+                            templateUrl: "<?php echo link_Pagina("lista_de_carros"); ?>"
+                        })
+                        .when("/cadastro", {
+                            templateUrl: "<?php echo link_Pagina("cadastro-carros"); ?>"
                         })
 
-                        .when("/cadastro", {
-                            templateUrl: "http://localhost/blog_corretora/site/cadastro-carros"
-                        })
+
+<?php
+foreach ($lista as $l):
+    ?>
+                    .when("/carro/<?php echo $l["id"] ?>", {
+                        templateUrl: "<?php echo $l["link"]; ?>"
+                    })
+    <?php
+endforeach;
+?>
+
+
             });
         </script>
-        <script src="<?php echo $url_tema;?>/js/menu.js"></script>
-        
+        <script src="<?php echo $url_tema; ?>/js/menu.js"></script>
+
 
         <?php wp_head(); ?>
     </head>
@@ -32,7 +52,7 @@
         <a href="#/lista_de_carro">lista de carros</a>
         <a href="#/cadastro">cadastro</a>
 
-        
+
         <div ng-view></div>
         <?php wp_footer(); ?>
     </body>

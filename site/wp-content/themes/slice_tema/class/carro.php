@@ -22,6 +22,13 @@ class carro {
         //echo $_SERVER['HTTP_REFERER'];
 
         $this->paginasInformacao = array(
+            "cadastro-carros",
+            "lista_de_carros",
+            "lista_json",
+            "descricao_carro"
+            );
+        
+       /* $this->paginasInformacao = array(
             "apilistaCarrosjson",
             "apiCadastradadoscarrosjson",
             "apiAtualizaDados",
@@ -31,7 +38,7 @@ class carro {
             "cadastro-carros",
             "lista_de_carros",
             
-        );
+        );*/
     }
 
     public function localiza_post($title = '') {

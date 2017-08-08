@@ -1,11 +1,5 @@
-<?php $url_tema = get_template_directory_uri(); ?>
-<script src="<?php echo $url_tema; ?>js/angular.min.js"></script>
-<script>angular.module("MyApp", []);</script>
 
-
-<div>
-    <div ng-app >
-        <h2>Cadastro de veículos</h2>
+        <h2>Cadastro de veículos!!</h2>
         <form name="dados" id="dados" method="post">
             <p><label>modelo</label><input type="text" name="modelo"></p>
             <p><label>ano</label><input type="number" name="ano"></p>
@@ -22,5 +16,3 @@
             <button>Salvar</button>
         </form>
         
-    </div>
-</div>

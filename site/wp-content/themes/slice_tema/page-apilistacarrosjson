@@ -1,9 +1,0 @@
-TESTE DE JSON
- <?php 
-/*
-header('Content-Type: application/json');
-'class/carro.php';
-$c=new carro();
-$lista = $c->ListaCarros();
-echo json_encode($lista);
-*/

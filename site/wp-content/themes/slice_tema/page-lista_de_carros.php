@@ -1,9 +1,18 @@
-<?php $url_tema = get_template_directory_uri(); ?>
-<?php require_once 'class/carro.php';?>
 <ul>
-    <li><a href="#/lista_de_carro/carro1">carro 1</a></li>
-    <li><a href="#/lista_de_carro/carro2">carro 2</a></li>
-    <li><a href="#/lista_de_carro/carro3">carro 3</a></li>
-    <li><a href="#/lista_de_carro/carro4">carro 4</a></li>
-    
+    <?php
+    $x = link_Pagina("lista_json");
+    $url = $x;
+    $ch = curl_init();
+    curl_setopt($ch, CURLOPT_URL, $url);
+    curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "GET");
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, TRUE);
+    $resultado = curl_exec($ch);
+    curl_close($ch);
+    $resultado = (array) json_decode($resultado);
+    foreach ($resultado as $x):
+        ?>
+    <li><a href="#/carro/<?php echo $x->id;?>"><?php print_r($x->titulo); ?></a></li>    
+        <?php
+    endforeach;
+    ?>
 </ul>

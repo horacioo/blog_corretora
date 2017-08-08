@@ -1,4 +1,4 @@
-angular.module("MyApp",[]).controller('Lista_Carros',['$scope',function($scope){
-        $scope.carros=["carro1","carro2","carro3"];
+app.controller('Lista_Carros',['$scope',function($scope){
+        $scope.carros=["herbie","aston martin","deLorean"];
         $scope.teste="informacao";
 }  ]);
