@@ -22,13 +22,24 @@ class carro {
         //echo $_SERVER['HTTP_REFERER'];
 
         $this->paginasInformacao = array(
-            "ApiListaDeCarros",
-            "Cadastradadoscarros",
-            "apiModeloCarro",
-            "ApiDeletaCarro",
-            "ApiAtualizaDados",
-            "Requisicoes"
-        );
+            "cadastro-carros",
+            "lista_de_carros",
+            "lista_json",
+            "descricao_carro",
+            "editar_carro"
+            );
+        
+       /* $this->paginasInformacao = array(
+            "apilistaCarrosjson",
+            "apiCadastradadoscarrosjson",
+            "apiAtualizaDados",
+            "apideleta_dados",
+            
+            "modelo_de_carro",
+            "cadastro-carros",
+            "lista_de_carros",
+            
+        );*/
     }
 
     public function localiza_post($title = '') {
