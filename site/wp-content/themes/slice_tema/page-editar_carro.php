@@ -9,10 +9,6 @@ $descricao = $post->post_content;
 /* * ********* */
 
 $x = $y = get_post_meta($x);
-echo "<p>ano: ";
-print_r($x['ano'][0]);
-echo "<p>marca: ";
-print_r($x['marca'][0]);
 
 /* * ********* */
 ?>
@@ -23,10 +19,11 @@ print_r($x['marca'][0]);
     <p><label>ano</label><input type="number" name="titulo" value="<?php echo $x['ano'][0] ?>"></p>
     <p><label>Marca</label>
         <select>
-            <option value="1">reitioert</option>
-            <option value="2">reitioert</option>
-            <option value="3">reitioert</option>
-            <option value="4">reitioert</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
         </select>
     </p>
+    <input type="submit" value="Editar">
 </form>
