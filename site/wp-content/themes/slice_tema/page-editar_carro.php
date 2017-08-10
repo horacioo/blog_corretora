@@ -1,15 +1,10 @@
 <?php
-
 $x = $_GET['id'];
-
-
 $post = get_post($x);
 $title = $post->post_title;
 $descricao = $post->post_content;
 /* * ********* */
-
 $x = $y = get_post_meta($x);
-
 /* * ********* */
 ?>
 
