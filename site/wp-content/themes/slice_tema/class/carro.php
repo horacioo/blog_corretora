@@ -26,6 +26,7 @@ class carro {
             "lista_de_carros",
             "lista_json",
             "descricao_carro",
+            "update_carro",
             "editar_carro"
             );
         

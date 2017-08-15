@@ -16,6 +16,8 @@ $lista = $carro->ListaCarros();
             var app = angular.module("App", ["ngRoute"]);
         </script>    
         <script src="<?php echo $url_tema; ?>/js/lista_carros.js"></script>
+        <script src="<?php echo $url_tema; ?>/js/detalhe_carro.js"></script>
+        
         <script>
             app.config(function ($routeProvider) {
                 $routeProvider
@@ -34,6 +36,7 @@ $lista = $carro->ListaCarros();
                     })
                     
                     .when("/editar/<?php echo $l["id"] ?>", {
+                        controller: "detalhe_carro",
                         templateUrl: "<?php echo link_Pagina("editar_carro"); ?>?id=<?php echo $l["id"] ?>"
                     })
 <?php endforeach; ?>
@@ -48,7 +51,7 @@ $lista = $carro->ListaCarros();
     </head>
     <body ng-app="App">
         <h1>home</h1>
-
+                
         <a href="#/lista_de_carro">lista de carros</a>
         <a href="#/cadastro">cadastro</a>
 
