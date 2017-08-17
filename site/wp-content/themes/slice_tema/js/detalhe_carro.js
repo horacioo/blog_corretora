@@ -10,11 +10,10 @@ function ProcessaAlteracao($http, $scope) {
     $scope.marca = "";
     $scope.mensagem = "";
     $scope.update = "";
-
+    /************************************************/
     $scope.requisicao = function () {
-        $scope.mensagem = "carregando";
-        var url = $scope.update;
-        $http({"method": "GET", "url": $scope.update, "data":{ "nome": "TreinaWeb"} })
+        var config = { headers: {'Content-Type': 'application/x-www-form-urlencoded;charset=utf-8;'} }
+        $http.post($scope.update, {nome: $scope.tituloCarro,descricao: $scope.descricao},config)
                 .then(function (response)
                 {
                     $scope.retorno = response.data
@@ -25,7 +24,7 @@ function ProcessaAlteracao($http, $scope) {
                     console.log(response);
                 });
     }
-
+    /************************************************/
 }
 
    
