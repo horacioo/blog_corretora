@@ -7,11 +7,42 @@ function myStartSession() {
 }
 
 add_filter('widget_text', 'do_shortcode');
-
-
 add_post_type_support('page', 'excerpt');
 add_post_type_support('post', 'excerpt');
 add_theme_support('post-thumbnails');
+
+function themename_custom_logo_setup() {
+    $defaults = array(
+        'height'      => 300,
+        'width'       => 300,
+        'flex-height' => true,
+        'flex-width'  => true,
+        'header-text' => array( 'site-title', 'site-description' ),
+    );
+    add_theme_support( 'custom-logo', $defaults );
+}
+add_action( 'after_setup_theme', 'themename_custom_logo_setup' );
+
+
+
+
+
+
+function Thumb() {
+    if (has_post_thumbnail()) { ?>
+            <div class="col-lg-12 topo_conteudo" >
+            <?php
+                echo the_post_thumbnail($size = "large", array("class"=>"img-responsive img-thumbnail"));
+                echo"<center><h2>"; echo the_title(); echo"</h2></center>";
+                echo"</div>";
+            } else { ?>
+                <?php echo"<center><h2>"; echo the_title(); echo"</h2></center>";?>
+            <?php }
+    }
+    
+
+
+
 
 
 

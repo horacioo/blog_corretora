@@ -34,7 +34,7 @@
                 <img src="<?php echo $thumb ?>" class="imagem_caroussel">
                 <div class="container">
                     <div class="carousel-caption">
-                        <h1><?php echo $titulo; ?></h1>
+                        <h1><a href="<?php echo get_permalink()?>"><?php echo $titulo; ?></a></h1>
                         <p><?php echo $resumo; ?></p>
                     </div>
                 </div>
